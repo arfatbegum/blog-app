@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
-  <title>Login - The Story Sage</title>
+  <title>Sign Up - The Story Sage</title>
   <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <style>
     .bd-placeholder-img {
@@ -99,24 +99,26 @@
   <main class="form-signin w-100 m-auto">
     <form method="post">
       <h1 class="h3 mb-3 fw-bold text-center">The Story Sage</h1>
-      <h1 class="h6 mb-3 fw-normal text-center">Please Login</h1>
+      <h1 class="h6 mb-3 fw-normal text-center">Create An Account</h1>
+      <div class="form-floating mb-3">
+        <input name="username" type="username" class="form-control rounded" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Username</label>
+      </div>
       <div class="form-floating mb-3">
         <input name="email" type="email" class="form-control rounded" id="floatingInput" placeholder="name@example.com">
         <label for="floatingInput">Email address</label>
       </div>
-      <div class="form-floating">
+      <div class="form-floating mb-3">
         <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
         <label for="floatingPassword">Password</label>
       </div>
-      <div class="form-check text-start my-3">
-        <input name="remember" class="form-check-input" type="checkbox" value="1" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-          Remember me
-        </label>
+      <div class="form-floating">
+        <input name="retype_password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Password</label>
       </div>
-      <button class="btn my-button w-100 py-2" type="submit">Login</button>
+      <button class="btn my-button w-100 py-2" type="submit">Create</button>
     </form>
-    <div class="text-center my-2">Dont't have an Account? <a href="signup.php">Sign Up</a></div>
+    <div class="text-center my-2">Already have an Account? <a href="login.php">Login</a></div>
   </main>
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
