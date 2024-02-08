@@ -84,11 +84,6 @@
     .bd-mode-toggle .dropdown-menu .active .bi {
       display: block !important;
     }
-
-    .my-button {
-      background-color: #6610f2;
-      color: #ffff;
-    }
   </style>
 
   <!-- Custom styles for this template -->
@@ -114,7 +109,7 @@
           Remember me
         </label>
       </div>
-      <button class="btn my-button w-100 py-2" type="submit">Login</button>
+      <button class="btn btn-dark w-100 py-2" type="submit">Login</button>
     </form>
     <div class="text-center my-2">Dont't have an Account? <a href="signup.php">Sign Up</a></div>
   </main>

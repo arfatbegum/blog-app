@@ -84,11 +84,6 @@
     .bd-mode-toggle .dropdown-menu .active .bi {
       display: block !important;
     }
-
-    .my-button {
-      background-color: #6610f2;
-      color: #ffff;
-    }
   </style>
 
   <!-- Custom styles for this template -->
@@ -116,7 +111,7 @@
         <input name="retype_password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
         <label for="floatingPassword">Password</label>
       </div>
-      <button class="btn my-button w-100 py-2" type="submit">Create</button>
+      <button class="btn btn-dark  w-100 py-2" type="submit">Create</button>
     </form>
     <div class="text-center my-2">Already have an Account? <a href="login.php">Login</a></div>
   </main>
