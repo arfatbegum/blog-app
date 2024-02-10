@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Home · Bootstrap v5.3</title>
+    <title>Home · The Story Sage</title>
 
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
@@ -19,7 +19,7 @@
 <body>
     <main>
         <!-- header -->
-        <header class="p-3 border-bottom bg-dark">
+        <header class="p-3 bg-dark">
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <a href="/" class="h5 text-white fw-bold pt-1 text-decoration-none">
@@ -27,9 +27,9 @@
                     </a>
 
                     <ul class="nav ms-4 col-12 col-lg-auto me-lg-auto mb-2 justify-content-center text-white mb-md-0">
-                        <li><a href="#" class="nav-link px-2 link-body-emphasis text-white">Post</a></li>
-                        <li><a href="#" class="nav-link px-2 link-body-emphasis text-white">Customers</a></li>
-                        <li><a href="#" class="nav-link px-2 link-body-emphasis text-white">Contact</a></li>
+                        <li><a href="home" class="nav-link px-2 link-body-emphasis text-white">Home</a></li>
+                        <li><a href="post" class="nav-link px-2 link-body-emphasis text-white">Post</a></li>
+                        <li><a href="contact" class="nav-link px-2 link-body-emphasis text-white">Contact</a></li>
                     </ul>
 
                     <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -41,9 +41,9 @@
                             <img src="https://static.vecteezy.com/system/resources/thumbnails/024/095/208/small/happy-young-man-smiling-free-png.png" alt="mdo" width="32" height="32" class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu text-small">
-                            <li><a class="dropdown-item" href="#">New project...</a></li>
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
                             <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Admin</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -95,40 +95,40 @@
         <!-- featured card -->
         <div class="container py-5 ">
             <h3 class="fw-bold pb-2">Featured Blogs</h3>
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-            <div class="col">
-                <div class="card mb-3" >
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="..." class="img-fluid rounded-start" alt="...">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="..." class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-3">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="..." class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card mb-3" >
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="..." class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         </div>
 
         <!-- footer -->
