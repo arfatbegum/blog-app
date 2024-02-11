@@ -2,18 +2,18 @@
 <html lang="en" data-bs-theme="auto">
 
 <head>
-    <script src="../assets/js/color-modes.js"></script>
+    <script src="<?=ROOT?>/assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <title>Home · The Story Sage</title>
 
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/headers.css" rel="stylesheet">
+    <link href="<?=ROOT?>/assets/css/headers.css" rel="stylesheet">
 </head>
 
 <body>
@@ -58,7 +58,7 @@
         <div id="carouselExampleDark" class="carousel carousel-dark slide">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="10000">
-                    <img src="assets/images/carousel-image-3.jpg" class="d-block w-100" alt="...">
+                    <img src="<?=ROOT?>/assets/images/carousel-image-3.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block bg-dark text-white p-4">
                         <i class="bi bi-quote h1"></i>
                         <h5 class="mt-2 fw-bold">Discover the World Through Words: Your Ultimate Blogging Destination</h5>
@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-                    <img src="assets/images/carousel-image-2.jpg" class="d-block w-100" alt="...">
+                    <img src="<?=ROOT?>/assets/images/carousel-image-2.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block bg-dark text-white p-4">
                         <i class="bi bi-quote h1"></i>
                         <h5 class="mt-2 fw-bold">Unleash Your Creativity: Where Ideas Meet Expression</h5>
@@ -74,7 +74,7 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/carousel-image-1.jpg" class="d-block w-100" alt="...">
+                    <img src="<?=ROOT?>/assets/images/carousel-image-1.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block bg-dark text-white p-4">
                         <i class="bi bi-quote h1"></i>
                         <h5 class="mt-2 fw-bold">Empower Your Voice: Amplify Your Impact with Our Blogging Community</h5>
@@ -178,7 +178,7 @@
             </footer>
         </div>
     </main>
-    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?=ROOT?>/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
