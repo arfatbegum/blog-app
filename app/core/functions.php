@@ -1,13 +1,32 @@
 <?php
 
+function query(string $query, array $data = [])
+{
+
+	$string = "mysql:hostname=".DBHOST.";dbname=". DBNAME;
+	$con = new PDO($string, DBUSER, DBPASS);
+
+	$stm = $con->prepare($query);
+	$stm->execute($data);
+
+	$result = $stm->fetchAll(PDO::FETCH_ASSOC);
+	if(is_array($result) && !empty($result))
+	{
+		return $result;
+	}
+
+	return false;
+
+}
+
 function create_tables()
 {
-    $string = "mysql:hostname=localhos;";
-    $con = new PDO($string, DBUSER, DBPASS);
+    $string = "mysql:hostname=".DBHOST.";";
+	$con = new PDO($string, DBUSER, DBPASS);
 
-    $query = "create database if not exists " . DBNAME;
-    $stm = $con->prepare($query);
-    $stm->execute();
+	$query = "create database if not exists ". DBNAME;
+	$stm = $con->prepare($query);
+	$stm->execute();
 
     $query = "use ". DBNAME;
 	$stm = $con->prepare($query);
