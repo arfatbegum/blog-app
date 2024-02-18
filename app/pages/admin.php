@@ -4,6 +4,17 @@ if (!logged_in()) {
   redirect('login');
 }
 
+
+$section  = $url[1] ?? 'dashboard';
+$action   = $url[2] ?? 'view';
+$id       = $url[3] ?? 0;
+
+$filename = "../app/pages/admin/".$section.".php";
+if(!file_exists($filename))
+{
+  $filename = "../app/pages/admin/404.php";
+}
+
 ?>
 
 <!doctype html>
@@ -34,7 +45,7 @@ if (!logged_in()) {
     </div>
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
-        <a class="nav-link px-3 text-white bg-dark" href="<?= ROOT ?>/logout">">Log out</a>
+        <a class="nav-link px-3 text-white bg-dark" href="<?= ROOT ?>/logout">Log out</a>
       </div>
     </div>
   </header>
@@ -51,7 +62,7 @@ if (!logged_in()) {
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" aria-current="page" href="<?= ROOT ?>/admin/users">
+              <a class="nav-link text-dark" aria-current="page" href="<?= ROOT?>/admin/users">
                 <i class="bi bi-person fs-6"></i>
                 Users
               </a>
@@ -90,17 +101,7 @@ if (!logged_in()) {
 
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Dashboard</h1>
-          <div class="btn-toolbar mb-2 mb-md-0">
-            <div class="btn-group me-2">
-              <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-            </div>
-            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-              <span data-feather="calendar" class="align-text-bottom"></span>
-              This week
-            </button>
-          </div>
+          <h2 class="h2">Dashboard</h2>
         </div>
 
         <?php
