@@ -3,36 +3,56 @@
 function query(string $query, array $data = [])
 {
 
-	$string = "mysql:hostname=".DBHOST.";dbname=". DBNAME;
+	$string = "mysql:hostname=" . DBHOST . ";dbname=" . DBNAME;
 	$con = new PDO($string, DBUSER, DBPASS);
 
 	$stm = $con->prepare($query);
 	$stm->execute($data);
 
 	$result = $stm->fetchAll(PDO::FETCH_ASSOC);
-	if(is_array($result) && !empty($result))
-	{
+	if (is_array($result) && !empty($result)) {
 		return $result;
 	}
 
 	return false;
+}
 
+function redirect($page)
+{
+	header('Location: ' . $page);
+	die;
+}
+
+function old_value($key, $default = '')
+{
+	if (!empty($_POST[$key]))
+		return $_POST[$key];
+
+	return $default;
+}
+
+function old_checked($key, $default = '')
+{
+	if (!empty($_POST[$key]))
+		return " checked ";
+
+	return "";
 }
 
 function create_tables()
 {
-    $string = "mysql:hostname=".DBHOST.";";
+	$string = "mysql:hostname=" . DBHOST . ";";
 	$con = new PDO($string, DBUSER, DBPASS);
 
-	$query = "create database if not exists ". DBNAME;
+	$query = "create database if not exists " . DBNAME;
 	$stm = $con->prepare($query);
 	$stm->execute();
 
-    $query = "use ". DBNAME;
+	$query = "use " . DBNAME;
 	$stm = $con->prepare($query);
 	$stm->execute();
 
-   /** users table **/
+	/** users table **/
 	$query = "create table if not exists users(
 
 		id int primary key auto_increment,
@@ -50,7 +70,7 @@ function create_tables()
 	$stm = $con->prepare($query);
 	$stm->execute();
 
-    /** categories table **/
+	/** categories table **/
 	$query = "create table if not exists categories(
 
 		id int primary key auto_increment,
