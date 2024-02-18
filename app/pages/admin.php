@@ -1,3 +1,11 @@
+<?php
+
+if (!logged_in()) {
+  redirect('login');
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -7,11 +15,11 @@
   <meta name="description" content="">
   <title>Admin - The Story Sage</title>
 
-  <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="<?= ROOT ?>/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
   <!-- Custom styles for this template -->
-  <link href="assets/css/dashboard.css" rel="stylesheet">
+  <link href="<?= ROOT ?>/assets/css/dashboard.css" rel="stylesheet">
 </head>
 
 <body>
@@ -26,7 +34,7 @@
     </div>
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
-        <a class="nav-link px-3 text-white bg-dark" href="<?ROOT?>/logout">">Log out</a>
+        <a class="nav-link px-3 text-white bg-dark" href="<?= ROOT ?>/logout">">Log out</a>
       </div>
     </div>
   </header>
@@ -37,25 +45,25 @@
         <div class="position-sticky pt-3 sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link text-dark" aria-current="page" href="admin">
+              <a class="nav-link text-dark" aria-current="page" href="<?= ROOT ?>/admin">
                 <i class="bi bi-flower3 fs-6"></i>
                 Dashboard
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" aria-current="page" href="admin/users">
+              <a class="nav-link text-dark" aria-current="page" href="<?= ROOT ?>/admin/users">
                 <i class="bi bi-person fs-6"></i>
                 Users
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" aria-current="page" href="admin/categories">
+              <a class="nav-link text-dark" aria-current="page" href="<?= ROOT ?>/admin/categories">
                 <i class="bi bi-tags fs-6"></i>
                 Categories
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" aria-current="page" href="admin/posts">
+              <a class="nav-link text-dark" aria-current="page" href="<?= ROOT ?>/admin/posts">
                 <i class="bi bi-journal-text fs-6"></i>
                 Posts
               </a>
@@ -70,7 +78,7 @@
           </h6>
           <ul class="nav flex-column mb-2">
             <li class="nav-item">
-              <a class="nav-link text-dark" href="">
+              <a class="nav-link text-dark" href="<?= ROOT ?>">
                 <i class="bi bi-house fs-6"></i>
                 Home
               </a>
@@ -94,12 +102,17 @@
             </button>
           </div>
         </div>
+
+        <?php
+        require_once $filename;
+        ?>
+
       </main>
     </div>
   </div>
 
 
-  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="<?= ROOT ?>/assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
