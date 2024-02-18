@@ -41,13 +41,13 @@
                             <img src="https://static.vecteezy.com/system/resources/thumbnails/024/095/208/small/happy-young-man-smiling-free-png.png" alt="mdo" width="32" height="32" class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu text-small">
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Admin</a></li>
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="<?ROOT?>/profile">">Profile</a></li>
+                            <li><a class="dropdown-item" href="<?ROOT?>/admin">">Admin</a></li>
+                            <li><a class="dropdown-item" href="<?ROOT?>/settings">Settings</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Log out</a></li>
+                            <li><a class="dropdown-item" href="<?ROOT?>/logout">Log out</a></li>
                         </ul>
                     </div>
                 </div>
