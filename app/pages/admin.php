@@ -9,10 +9,13 @@ $section  = $url[1] ?? 'dashboard';
 $action   = $url[2] ?? 'view';
 $id       = $url[3] ?? 0;
 
-$filename = "../app/pages/admin/".$section.".php";
-if(!file_exists($filename))
-{
+$filename = "../app/pages/admin/" . $section . ".php";
+if (!file_exists($filename)) {
   $filename = "../app/pages/admin/404.php";
+}
+
+if ($section == 'users') {
+  require_once "../app/pages/admin/users-controller.php";
 }
 
 ?>
@@ -62,7 +65,7 @@ if(!file_exists($filename))
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-dark" aria-current="page" href="<?= ROOT?>/admin/users">
+              <a class="nav-link text-dark" aria-current="page" href="<?= ROOT ?>/admin/users">
                 <i class="bi bi-person fs-6"></i>
                 Users
               </a>
