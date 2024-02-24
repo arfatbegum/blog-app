@@ -1,7 +1,7 @@
 <?php if ($action == 'add') : ?>
     <div>
         <!-- add user -->
-        <div class="d-flex justify-content-between mb-3">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
             <h5 class="fw-bold">Enter User Information for Add User</h5>
             <a href="<?= ROOT ?>/admin/users">
                 <button class="btn btn-dark py-2 px-3" type="button">Back</button>
@@ -78,7 +78,7 @@
     </div>
 <?php elseif ($action == 'edit') : ?>
     <div>
-        <div class="d-flex justify-content-between mb-3">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
             <h5 class="fw-bold">Edit User Information</h5>
             <a href="<?= ROOT ?>/admin/users">
                 <button class="btn btn-dark py-2 px-3" type="button">Back</button>
@@ -154,7 +154,6 @@
                 </div>
                 <button class="btn btn-dark w-100 py-2" type="submit">Edit</button>
             <?php else : ?>
-
                 <div class="alert alert-danger text-center">Record not found!</div>
             <?php endif; ?>
         </form>
@@ -163,9 +162,51 @@
 
 <?php elseif ($action == 'delete') : ?>
 
+    <div class="">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h5 class="fw-bold">Delete User</h5>
+            <a href="<?= ROOT ?>/admin/users">
+                <button class="btn btn-dark py-2 px-3" type="button">Back</button>
+            </a>
+        </div>
+        <form method="post">
+
+            <?php if (!empty($row)) : ?>
+
+                <?php if (!empty($errors)) : ?>
+                    <div class="alert alert-danger">Please fix the errors below</div>
+                <?php endif; ?>
+                <div class="alert alert-danger">Are you sure to delete this user?</div>
+                <div class="form-floating">
+                    <div class="form-control mb-2"><?= old_value('username', $row['username']) ?></div>
+                </div>
+                <?php if (!empty($errors['username'])) : ?>
+                    <div class="text-danger"><?= $errors['username'] ?></div>
+                <?php endif; ?>
+
+                <div class="form-floating">
+                    <div class="form-control mb-2"><?= old_value('email', $row['email']) ?></div>
+                </div>
+                <?php if (!empty($errors['email'])) : ?>
+                    <div class="text-danger"><?= $errors['email'] ?></div>
+                <?php endif; ?>
+
+
+                <a href="<?= ROOT ?>/admin/users">
+                    <button class="mt-4 btn btn-lg btn-dark" type="button">Cancel</button>
+                </a>
+                <button class="mt-4 btn btn-lg btn-danger  float-end" type="submit">Delete</button>
+            <?php else : ?>
+
+                <div class="alert alert-danger text-center">Record not found!</div>
+            <?php endif; ?>
+
+        </form>
+    </div>
+
 <?php else : ?>
     <!-- users table -->
-    <div class="d-flex justify-content-between mb-3">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h3 class="fw-bold">All Users</h3>
         <a href="<?= ROOT ?>/admin/users/add">
             <button class="btn-dark rounded py-2 px-3"><i class="bi bi-person-plus"></i> Add User</button>
