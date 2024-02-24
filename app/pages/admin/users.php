@@ -77,6 +77,89 @@
         </form>
     </div>
 <?php elseif ($action == 'edit') : ?>
+    <div>
+        <div class="d-flex justify-content-between mb-3">
+            <h5 class="fw-bold">Edit User Information</h5>
+            <a href="<?= ROOT ?>/admin/users">
+                <button class="btn btn-dark py-2 px-3" type="button">Back</button>
+            </a>
+        </div>
+        <form method="post" enctype="multipart/form-data">
+            <?php if (!empty($row)) : ?>
+
+                <?php if (!empty($errors)) : ?>
+                    <div class="alert alert-danger">Please fix the errors below</div>
+                <?php endif; ?>
+                <div class="my-2">
+                    <label class="d-block">
+                        <img class="mx-auto d-block image-preview-edit" src="<?= get_image($row['image']) ?>" style="cursor: pointer;width: 150px;height: 150px;object-fit: cover;">
+                        <input onchange="display_image_edit(this.files[0])" type="file" name="image" class="d-none">
+                    </label>
+                    <?php if (!empty($errors['image'])) : ?>
+                        <div class="text-danger"><?= $errors['image'] ?></div>
+                    <?php endif; ?>
+
+                    <script>
+                        function display_image_edit(file) {
+                            document.querySelector(".image-preview-edit").src = URL.createObjectURL(file);
+                        }
+                    </script>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-floating">
+                            <input value="<?= old_value('username', $row['username']) ?>" name="username" type="username" class="form-control rounded" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Username</label>
+                        </div>
+                        <?php if (!empty($errors['username'])) : ?>
+                            <div class="text-danger mb-2"><?= $errors['username'] ?></div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating">
+                            <input value="<?= old_value('email', $row['email']) ?>"" name=" email" type="email" class="form-control rounded" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <?php if (!empty($errors['email'])) : ?>
+                            <div class="text-danger mb-2"><?= $errors['email'] ?></div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <div class="form-floating my-3">
+                    <select name="role" class="form-select">
+                        <option <?= old_select('role', 'user', $row['role']) ?> value="user">User</option>
+                        <option <?= old_select('role', 'admin', $row['role']) ?> value="admin">Admin</option>
+                    </select>
+                    <label for="floatingInput">Role</label>
+                </div>
+                <?php if (!empty($errors['role'])) : ?>
+                    <div class="text-danger"><?= $errors['role'] ?></div>
+                <?php endif; ?>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-floating mb-3">
+                            <input value="<?= old_value('password') ?>" name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                        <?php if (!empty($errors['password'])) : ?>
+                            <div class="text-danger mb-2"><?= $errors['password'] ?></div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="col">
+                        <div class="form-floating">
+                            <input value="<?= old_value('retype_password') ?>" name="retype_password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Password</label>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-dark w-100 py-2" type="submit">Edit</button>
+            <?php else : ?>
+
+                <div class="alert alert-danger text-center">Record not found!</div>
+            <?php endif; ?>
+        </form>
+    </div>
+
 
 <?php elseif ($action == 'delete') : ?>
 

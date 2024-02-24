@@ -17,6 +17,25 @@ function query(string $query, array $data = [])
 	return false;
 }
 
+function query_row(string $query, array $data = [])
+{
+
+	$string = "mysql:hostname=".DBHOST.";dbname=". DBNAME;
+	$con = new PDO($string, DBUSER, DBPASS);
+
+	$stm = $con->prepare($query);
+	$stm->execute($data);
+
+	$result = $stm->fetchAll(PDO::FETCH_ASSOC);
+	if(is_array($result) && !empty($result))
+	{
+		return $result[0];
+	}
+
+	return false;
+
+}
+
 function redirect($page)
 {
 	header('Location: ' . $page);
@@ -29,6 +48,17 @@ function old_value($key, $default = '')
 		return $_POST[$key];
 
 	return $default;
+}
+
+function old_select($key, $value, $default = '')
+{
+	if(!empty($_POST[$key]) && $_POST[$key] == $value)
+		return " selected ";
+	
+	if($default == $value)
+		return " selected ";
+	
+	return "";
 }
 
 function old_checked($key, $default = '')
