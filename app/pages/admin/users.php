@@ -206,7 +206,7 @@
 
 <?php else : ?>
     <!-- users table -->
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
         <h3 class="fw-bold">All Users</h3>
         <a href="<?= ROOT ?>/admin/users/add">
             <button class="btn-dark rounded py-2 px-3"><i class="bi bi-person-plus"></i> Add User</button>
@@ -238,7 +238,7 @@
                         <td><?= $row['email'] ?></td>
                         <td><?= $row['role'] ?></td>
                         <td>
-                            <img src="">
+                            <img src="<?= get_image($row['image']) ?>" style="width: 50px;height: 50px;object-fit: cover;">
                         </td>
                         <td><?= date("jS M, Y", strtotime($row['date'])) ?></td>
                         <td>
@@ -254,5 +254,14 @@
             <?php endif; ?>
         </tbody>
     </table>
+
+    <div class="mb-4 float-end">
+        <a href="<?= $PAGE['prev_link'] ?>">
+            <button class="btn btn-dark">Previous</button>
+        </a>
+        <a href="<?= $PAGE['next_link'] ?>">
+            <button class="btn btn-dark">Next</button>
+        </a>
+    </div>
 
 <?php endif; ?>

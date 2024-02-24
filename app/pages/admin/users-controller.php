@@ -161,32 +161,36 @@ if ($action == 'edit') {
             }
         }
     }
-}
-if ($action == 'delete') {
-
+}  if($action == 'delete')
+{
+    
     $query = "select * from users where id = :id limit 1";
-    $row = query_row($query, ['id' => $id]);
+    $row = query_row($query, ['id'=>$id]);
 
-    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    if($_SERVER['REQUEST_METHOD'] == "POST")
+    {
 
-        if ($row) {
+      if($row)
+      {
 
-            //validate
-            $errors = [];
+        //validate
+        $errors = [];
 
-            if (empty($errors)) {
-                //delete from database
-                $data = [];
-                $data['id']       = $id;
+        if(empty($errors))
+        {
+          //delete from database
+          $data = [];
+          $data['id']       = $id;
 
-                $query = "delete from users where id = :id limit 1";
-                query($query, $data);
+          $query = "delete from users where id = :id limit 1";
+          query($query, $data);
 
-                if (file_exists($row['image']))
-                    unlink($row['image']);
+          if(file_exists($row['image']))
+            unlink($row['image']);
 
-                redirect('admin/users');
-            }
+          redirect('admin/users');
+
         }
+      }
     }
-}
+  }
