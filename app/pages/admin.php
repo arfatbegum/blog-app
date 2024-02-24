@@ -16,6 +16,8 @@ if (!file_exists($filename)) {
 
 if ($section == 'users') {
   require_once "../app/pages/admin/users-controller.php";
+} else if ($section == 'categories') {
+  require_once "../app/pages/admin/categories-controller.php";
 }
 
 ?>
