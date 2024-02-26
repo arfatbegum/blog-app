@@ -147,7 +147,7 @@
                         <td><?= $row['disabled'] ? 'No' : 'Yes' ?></td>
                         <td>
                             <a href="<?= ROOT ?>/admin/categories/edit/<?= $row['id'] ?>">
-                                <button class="btn btn-warning text-white btn-sm"><i class="bi bi-pencil-square"></i></button>
+                                <button class="btn btn-dark text-white btn-sm"><i class="bi bi-pencil-square"></i></button>
                             </a>
                             <a href="<?= ROOT ?>/admin/categories/delete/<?= $row['id'] ?>">
                                 <button class="btn btn-danger btn-sm"><i class="bi bi-trash-fill"></i></button>
